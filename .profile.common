@@ -1,0 +1,18 @@
+alias mvnp='mvn clean package -DskipTests=true'
+
+# git alias -> check alias defined in oh-my-zsh
+
+alias ta='tmux a -t'
+alias phttp='simpleHttpServer'
+
+
+function simpleHttpServer(){
+	if [ "" -ne "$1" ]; then
+		python -m SimpleHTTPServer $1 &
+	else
+		python -m SimpleHTTPServer 18888 &
+	fi
+	ifconfig | grep inet | egrep -v '127.0.0.1|10.'
+}
+
+alias hha='aaa'
